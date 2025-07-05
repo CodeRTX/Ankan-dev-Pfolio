@@ -70,6 +70,7 @@ ankan-resume-portfolio/
 │   │       ├── card.jsx
 │   │       └── separator.jsx
 │   ├── hooks/
+│   │   └── use-mobile.js
 │   ├── lib/
 │   │   └── utils.js
 │   ├── App.css
