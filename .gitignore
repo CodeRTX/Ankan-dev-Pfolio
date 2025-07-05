@@ -34,3 +34,21 @@ dist-ssr/
 
 # Other
 *.zip
+
+
+
+# Generated files that are not part of the source code
+# dist/assets/
+
+# Resume data file (not part of source control)
+resume_data.json
+
+# PDF text extraction
+*.txt
+
+# Local development server output
+.vite/
+
+# Any other temporary or local files
+*.swp
+*.bak
