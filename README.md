@@ -59,8 +59,7 @@ pnpm run dev
 ```
 ankan-resume-portfolio/
 ├── public/
-│   ├── favicon.ico
-│   └── vite.svg
+│   └── favicon.ico
 ├── src/
 │   ├── assets/
 │   │   └── react.svg
@@ -85,6 +84,7 @@ ankan-resume-portfolio/
 ├── index.html
 ├── package.json
 ├── pnpm-lock.yaml
+├── jsconfig.json
 ├── README.md
 └── vite.config.js
 ```
@@ -93,7 +93,6 @@ ankan-resume-portfolio/
 
 The website is fully responsive with breakpoints for:
 - Mobile: < 640px
-- Tablet: 640px - 1024px
 - Desktop: > 1024px
 
 ## 🚀 Deployment
