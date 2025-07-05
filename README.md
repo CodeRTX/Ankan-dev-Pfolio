@@ -58,29 +58,35 @@ pnpm run dev
 
 ```
 ankan-resume-portfolio/
-├── public/                 # Static assets
+├── public/
+│   ├── favicon.ico
+│   └── vite.svg
 ├── src/
-│   ├── components/ui/      # Reusable UI components
-│   ├── App.jsx            # Main application component
-│   ├── App.css            # Global styles
-│   └── main.jsx           # Application entry point
+│   ├── assets/
+│   │   └── react.svg
+│   ├── components/
+│   │   └── ui/
+│   │       ├── badge.jsx
+│   │       ├── button.jsx
+│   │       ├── card.jsx
+│   │       └── separator.jsx
+│   ├── hooks/
+│   ├── lib/
+│   │   └── utils.js
+│   ├── App.css
+│   ├── App.jsx          # Main resume component
+│   ├── index.css
+│   └── main.jsx
+├── dist/                # Production build (generated)
+│   ├── assets/
+│   └── index.html
+├── components.json      # shadcn/ui configuration
+├── eslint.config.js
+├── index.html
 ├── package.json
-└── README.md
-```
-
-## 🎨 Customization
-
-To customize the resume content, edit the `resumeData` object in `src/App.jsx`:
-
-```javascript
-const resumeData = {
-  contact: {
-    name: "Your Name",
-    email: "your.email@example.com",
-    // ... other fields
-  },
-  // ... other sections
-}
+├── pnpm-lock.yaml
+├── README.md
+└── vite.config.js
 ```
 
 ## 📱 Responsive Design
@@ -106,10 +112,6 @@ npm run build
 pnpm run build
 ```
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## 👤 Contact
 
 **Ankan Debnath**
@@ -117,15 +119,10 @@ This project is open source and available under the [MIT License](LICENSE).
 - LinkedIn: [ankan-debnath-009804b1](https://www.linkedin.com/in/ankan-debnath-009804b1)
 - GitHub: [CodeRTX](https://github.com/CodeRTX)
 
+## 📄 License
+
+This project is open source and available under the [MIT License 2.0](LICENSE).
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](../../issues).
-
-## ⭐ Show Your Support
-
-Give a ⭐️ if this project helped you!
-
----
-
-*Built with ❤️ using React and Tailwind CSS*
-
