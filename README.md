@@ -4,7 +4,7 @@ A modern, responsive resume website built with React, Tailwind CSS, and shadcn/u
 
 ## 🌟 Live Demo
 
-[View Live Website](https://your-vercel-url.vercel.app) *(Update with your actual Vercel URL)*
+[View Live Website](https://ankan-dev-pfolio-v2.vercel.app/)
 
 ## 📋 Features
 
