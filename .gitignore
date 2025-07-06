@@ -32,9 +32,11 @@ dist-ssr/
 # Vercel specific
 .vercel/
 
+# Deployed using `vercel.com`
+# Vercel is a cloud platform that lets developers easily deploy, host, and scale web apps—especially frontend projects—directly from Git repositories.
+
 # Other
 *.zip
-
 
 
 # Generated files that are not part of the source code
