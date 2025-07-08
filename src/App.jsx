@@ -66,7 +66,7 @@ function App() {
       {
         title: "Industrial IoT and Edge AI Analyst (Trainee)",
         company: "IIT Guwahati",
-        duration: "2024 – January 2025",
+        duration: "Guwahati, Assam (Oct 2024 – January 2025)",
         responsibilities: [
           "Configured and programmed IoT systems using Raspberry Pi, NodeMCU, and STM32 for data collection and management.",
           "Designed and implemented automation workflows using Node-RED for efficient device communication and task automation.",
@@ -78,7 +78,7 @@ function App() {
       {
         title: "Fraud Analyst",
         company: "TTEC",
-        duration: "Ahmedabad, Gujrat (Dec2019 – March 2020)",
+        duration: "Ahmedabad, Gujrat (Dec 2019 – March 2020)",
         responsibilities: [
           "Analyzed large volumes of user profiles and their data to identify fraudulent accounts.",
           "Collaborated with team members to discuss and address issues encountered during the analysis."
@@ -137,7 +137,7 @@ function App() {
       {
         title: "MASTER CLASS on Machine Learning (5 days)",
         issuer: "Pantech Solutions",
-        date: "May 2020",
+        date: "Oct 2021",
         description: "Completed an intensive 5-day course on Machine Learning, covering fundamental concepts and essential data analytics techniques. Additionally, gained proficiency in Python programming."
       }
     ],
