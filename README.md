@@ -121,7 +121,7 @@ pnpm run build
 
 ## 📄 License
 
-This project is open source and available under the [MIT License 2.0](LICENSE).
+This project is open source and available under the [Apache License 2.0](LICENSE).
 
 ## 🤝 Contributing
 
