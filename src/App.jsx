@@ -40,13 +40,13 @@ function App() {
       },
       {
         year: "2013",
-        degree: "Intermediate(Class XII)",
+        degree: "Intermediate (Class XII)",
         institute: "DPS Guwahati",
         grade: "83.4%"
       },
       {
         year: "2011",
-        degree: "Matriculation(Class X)",
+        degree: "Matriculation (Class X)",
         institute: "DPS Guwahati",
         grade: "8.4/10.0"
       }
@@ -137,7 +137,7 @@ function App() {
       {
         title: "MASTER CLASS on Machine Learning (5 days)",
         issuer: "Pantech Solutions",
-        date: "Oct 2021",
+        date: "May 2020",
         description: "Completed an intensive 5-day course on Machine Learning, covering fundamental concepts and essential data analytics techniques. Additionally, gained proficiency in Python programming."
       }
     ],
