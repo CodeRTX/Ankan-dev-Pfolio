@@ -30,7 +30,10 @@ function App() {
       github: "https://github.com/CodeRTX",
       kaggle: "https://www.kaggle.com/ankandebnath"
     },
-    objective: "Detail-oriented and motivated ECE-graduate seeking an entry-level position to apply technical skills in software development, system analysis, and problem-solving. Proficient in modern programming languages, passionate about learning and contributing to innovative IT solutions, Machine Learning, and IoT. I also enjoy listening to music, playing video games, staying updated with the latest gadgets and computer hardware, and participating in Hackathons & coding contests. I am currently pursuing my MTech Degree at Gauhati University in ECE and working on my Final Year Project on 'Image Captioning using LSTM + Attention-Mechanism + CNN'.",
+    objective: [
+      "Detail-oriented and motivated ECE-graduate seeking an entry-level position to apply technical skills in software development, system analysis, and problem-solving. Proficient in modern programming languages, passionate about learning and contributing to innovative IT solutions, Machine Learning, and IoT. I also enjoy listening to music, playing video games, staying updated with the latest gadgets and computer hardware, and participating in Hackathons & coding contests.",
+      "I am currently pursuing my MTech Degree at Gauhati University in ECE and working on my Final Year Project on 'Image Captioning using LSTM + Attention-Mechanism + CNN'."
+    ],
     academic_details: [
       {
         year: "2017",
@@ -96,41 +99,55 @@ function App() {
     ],
     projects: [
       {
-        name: "TicTacToe-Challenge",
+        name: "Google-Generative-AI-Colab",
         description: [
-          "This repository showcases various implementations of the classic Tic-Tac-Toe game, including console-based and graphical user interface (GUI)versions in Java, as well as a web-based version using HTML, CSS, and JavaScript.",
-          "Each implementation supports both human vs. human and human vs. AI gameplay."
-        ]
-      },
+            "Demonstrates how to authenticate and configure Google Cloud credentials within a Colab environment to access Vertex AI generative models.",
+            "Includes notebooks for text completion, code generation, chat‐based Q&A, and image synthesis using Google’s GenAI APIs, with practical prompt‐engineering examples.",
+            "Visualizes outputs directly in Colab and provides guidance on best practices, rate limits, and cost management for generative AI workflows."
+    ],
+        url: "https://github.com/CodeRTX/Google-Generative-AI-Colab"
+  },
       {
         name: "Drowsiness-Detector",
         description: [
           "Utilizes facial landmarks and head tilt detection to continuously monitor user alertness. Detects signs of drowsiness, such as yawning and head tilting.",
           "Provides sound alerts when drowsiness is detected and logs events with timestamps for tracking and analysis.",
           "Plots drowsiness states over time, offering visual insights into the user's alertness levels."
-        ]
+        ],
+        url: "https://github.com/CodeRTX/drowsiness-detector"
+      },
+  {
+       name: "Wine-Quality-Analysis",
+       description: [
+            "Performs exploratory data analysis on the UCI Wine Quality dataset, featuring distribution plots, correlation heatmaps, and feature‐importance insights.",
+            "Builds and evaluates machine learning models (Random Forest, XGBoost) to predict wine quality, employing hyperparameter tuning and strategies to handle class imbalance.",
+            "Deploys the trained model via a FastAPI backend and a Streamlit frontend, enabling real‐time quality predictions through an interactive web interface."
+    ],
+        url: "https://github.com/CodeRTX/Wine-Quality-Analysis"
+  },
+      {
+        name: "ESP32 Weather-Notifier",
+        description: [
+          "[MTech Mini-Project] Supervisor: Dr. Lachit Dutta, Asst. Professor, Dept. of Electronics and Communication Engineering, Gauhati University.",
+          "ESP32-based asynchronous web server that monitors real-time temperature and humidity data using the DHT11 sensor, with WhatsApp notification integration."
+        ],
+        url: "https://github.com/CodeRTX/ESP32_Weather_Notifier"
+      },
+      {
+        name: "TicTacToe-Challenge",
+        description: [
+          "This repository showcases various implementations of the classic Tic-Tac-Toe game, including console-based and graphical user interface (GUI) versions in Java, as well as a web-based version using HTML, CSS, and JavaScript.",
+          "Each implementation supports both human vs. human and human vs. AI gameplay."
+        ],
+        url: "https://github.com/CodeRTX/TicTacToe-Challenge"
       },
       {
         name: "WebCrawler",
         description: [
           "A simple web crawler built using Node.js, Axios, and Cheerio. This tool crawls web pages starting from a specified URL and collects links up to a specified depth.",
           "The results are saved in a JSON file."
-        ]
-      },
-      {
-        name: "ESP32 Weather-Notifier",
-        description: [
-          "[MTech Mini-Project] Supervisor: Dr. Lachit Dutta, Asst. Professor, Dept. of Electronics and Communication Engineering, Gauhati University.",
-          "ESP32-based asynchronous web server that monitors real-time temperature and humidity data using the DHT11 sensor, with WhatsApp notification integration."
-        ]
-      },
-      {
-        name: "Responsive Resume using CSS-Grid",
-        description: [
-          "[Newton School]",
-          "It can adjust itself according to the dimensions of the browser.",
-          "Tech used: HTML CSS."
-        ]
+        ],
+        url: "https://github.com/CodeRTX/WebCrawler"
       }
     ],
     certifications: [
@@ -200,15 +217,18 @@ function App() {
                   <Github className="w-5 h-5" />
                   <span>GitHub</span>
                 </a>
-                <a 
-                  href={resumeData.contact.kaggle} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-blue-500 hover:text-blue-700 transition-colors"
-                >
-                  <ExternalLink className="w-5 h-5" />
-                  <span>Kaggle</span>
-                </a>
+                <a
+                    href={resumeData.contact.kaggle}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-blue-500 hover:text-blue-700 transition-colors" >
+                    <img
+                      src="/favicon.ico"
+                      alt="Kaggle"
+                      className="w-5 h-5 object-contain"
+                   />
+                   <span>Kaggle</span>
+                  </a>
               </div>
             </div>
           </div>
@@ -227,10 +247,12 @@ function App() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-              {resumeData.objective}
-            </p>
-          </CardContent>
+                {resumeData.objective.map((para, i) => (
+                  <p key={i} className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                    {para}
+                  </p>
+                ))}
+        </CardContent>
         </Card>
 
         {/* Academic Details */}
@@ -267,68 +289,138 @@ function App() {
           </CardContent>
         </Card>
 
-        {/* Technical Skills */}
-        <Card className="shadow-lg hover:shadow-xl transition-shadow">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-2xl">
-              <Code className="w-6 h-6 text-purple-600" />
-              Technical Skills
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid gap-6">
-              <div>
-                <h3 className="font-semibold text-lg mb-3 text-slate-900 dark:text-white">Programming Languages</h3>
-                <div className="flex flex-wrap gap-2">
-                  {resumeData.technical_skills.programming_languages.map((skill, index) => (
-                    <Badge key={index} variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-              
-              <Separator />
-              
-              <div>
-                <h3 className="font-semibold text-lg mb-3 text-slate-900 dark:text-white">IoT & Embedded Systems</h3>
-                <div className="flex flex-wrap gap-2">
-                  {resumeData.technical_skills.iot_embedded_systems.map((skill, index) => (
-                    <Badge key={index} variant="outline" className="bg-green-50 text-green-700 border-green-200">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-              
-              <Separator />
-              
-              <div>
-                <h3 className="font-semibold text-lg mb-3 text-slate-900 dark:text-white">AI & Data Analytics</h3>
-                <div className="flex flex-wrap gap-2">
-                  {resumeData.technical_skills.ai_data_analytics.map((skill, index) => (
-                    <Badge key={index} variant="outline" className="bg-purple-50 text-purple-700 border-purple-200">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-              
-              <Separator />
-              
-              <div>
-                <h3 className="font-semibold text-lg mb-3 text-slate-900 dark:text-white">Development Tools</h3>
-                <div className="flex flex-wrap gap-2">
-                  {resumeData.technical_skills.development_tools.map((skill, index) => (
-                    <Badge key={index} variant="outline" className="bg-orange-50 text-orange-700 border-orange-200">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+{/* Skills Summary Section */}
+<Card className="shadow-lg hover:shadow-xl transition-shadow">
+  <CardHeader>
+    <CardTitle className="flex items-center gap-2 text-2xl">
+      <Code className="w-6 h-6 text-purple-600" />
+      Skills Summary
+    </CardTitle>
+  </CardHeader>
+  <CardContent>
+
+    {/* 1. Programming Languages */}
+    <h3 className="font-semibold text-lg mb-2 text-slate-900 dark:text-white">
+      1. Programming Languages
+    </h3>
+    <div className="flex flex-wrap gap-2 mb-4">
+      {resumeData.technical_skills.programming_languages.map(lang => (
+        <Badge
+          key={lang}
+          variant="outline"
+          className="bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900 dark:text-blue-300"
+        >
+          {lang}
+        </Badge>
+      ))}
+    </div>
+    <Separator className="my-4" />
+
+    {/* 2. IoT & Embedded Systems */}
+    <h3 className="font-semibold text-lg mb-2 text-slate-900 dark:text-white">
+      2. IoT & Embedded Systems
+    </h3>
+    <div className="flex flex-wrap gap-2 mb-4">
+      {resumeData.technical_skills.iot_embedded_systems.map(item => (
+        <Badge
+          key={item}
+          variant="outline"
+          className="bg-green-50 text-green-700 border-green-200 dark:bg-green-900 dark:text-green-300"
+        >
+          {item}
+        </Badge>
+      ))}
+    </div>
+    <Separator className="my-4" />
+
+    {/* 3. AI & Data Analytics */}
+    <h3 className="font-semibold text-lg mb-2 text-slate-900 dark:text-white">
+      3. AI & Data Analytics
+    </h3>
+    <div className="flex flex-wrap gap-2 mb-4">
+      {resumeData.technical_skills.ai_data_analytics.map(item => (
+        <Badge
+          key={item}
+          variant="outline"
+          className="bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-900 dark:text-purple-300"
+        >
+          {item}
+        </Badge>
+      ))}
+    </div>
+    <Separator className="my-4" />
+
+    {/* 4. Development Tools */}
+    <h3 className="font-semibold text-lg mb-2 text-slate-900 dark:text-white">
+      4. Development Tools
+    </h3>
+    <div className="flex flex-wrap gap-2 mb-4">
+      {resumeData.technical_skills.development_tools.map(tool => (
+        <Badge
+          key={tool}
+          variant="outline"
+          className="bg-orange-50 text-orange-700 border-orange-200 dark:bg-orange-900 dark:text-orange-300"
+        >
+          {tool}
+        </Badge>
+      ))}
+    </div>
+    <Separator className="my-4" />
+
+    {/* 5. Operating Systems */}
+    <h3 className="font-semibold text-lg mb-2 text-slate-900 dark:text-white">
+      5. Operating Systems
+    </h3>
+    <div className="flex flex-wrap gap-2 mb-4">
+      {resumeData.technical_skills.operating_systems.map(os => (
+        <Badge
+          key={os}
+          variant="outline"
+          className="bg-gray-50 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-300"
+        >
+          {os}
+        </Badge>
+      ))}
+    </div>
+    <Separator className="my-4" />
+
+    {/* 6. Databases */}
+    <h3 className="font-semibold text-lg mb-2 text-slate-900 dark:text-white">
+      6. Databases
+    </h3>
+    <div className="flex flex-wrap gap-2 mb-4">
+      {resumeData.technical_skills.databases.map(db => (
+        <Badge
+          key={db}
+          variant="outline"
+          className="bg-teal-50 text-teal-700 border-teal-200 dark:bg-teal-900 dark:text-teal-300"
+        >
+          {db}
+        </Badge>
+      ))}
+    </div>
+    <Separator className="my-4" />
+
+    {/* 7. Core Concepts */}
+    <h3 className="font-semibold text-lg mb-2 text-slate-900 dark:text-white">
+      7. Core Concepts
+    </h3>
+    <div className="flex flex-wrap gap-2 mb-8">
+      {resumeData.technical_skills.core_concepts.map(cc => (
+        <Badge
+          key={cc}
+          variant="outline"
+          className="bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-900 dark:text-indigo-300"
+        >
+          {cc}
+        </Badge>
+      ))}
+    </div>
+
+  </CardContent>
+</Card>
+
+
 
         {/* Work Experience */}
         <Card className="shadow-lg hover:shadow-xl transition-shadow">
@@ -379,8 +471,10 @@ function App() {
               {resumeData.projects.map((project, index) => (
                 <Card key={index} className="border-2 hover:border-green-300 transition-colors">
                   <CardHeader>
-                    <CardTitle className="text-lg text-green-700 dark:text-green-400">
-                      {project.name}
+                    <CardTitle className="text-lg">
+                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-green-700 dark:text-green-400 hover:underline">
+                          {project.name}
+                      </a>
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
