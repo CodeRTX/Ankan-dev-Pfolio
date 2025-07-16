@@ -223,7 +223,7 @@ function App() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-blue-500 hover:text-blue-700 transition-colors" >
                     <img
-                      src="/favicon.ico"
+                      src="/kaggle.ico"
                       alt="Kaggle"
                       className="w-5 h-5 object-contain"
                    />
